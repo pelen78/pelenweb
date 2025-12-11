@@ -149,17 +149,19 @@
             margin-bottom: 1.4rem;
         }
 
-        .avatar img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-            background: linear-gradient(135deg, #ff6b6b, #54a0ff);
-            padding: 3px;
-        }
+     .avatar img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, #ff6b6b, #54a0ff);
+    padding: 3px;
 
+    /* 👇 Animación de flotación */
+    animation: avatarFloat 7s ease-in-out infinite;
+}
         /* Scroll indicator */
         .scroll-indicator {
             margin-top: 30px;
