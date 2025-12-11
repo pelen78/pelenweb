@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Pelen Montes Chávez | pelen13.com</title>
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Pelen Montes Chávez | pelen13.com">
+    <meta property="og:description" content="High school teacher & creative tech enthusiast. Let’s connect.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pelen13.com">
+    <meta property="og:image" content="https://pelen13.com/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pelen Montes Chávez | pelen13.com">
+    <meta name="twitter:description" content="High school teacher & creative tech enthusiast. Let’s connect.">
+    <meta name="twitter:image" content="https://pelen13.com/og-image.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Subtle animated gradient background (moving cloud) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(255, 107, 107, 0.11), transparent 55%),
+                radial-gradient(circle at 100% 0%, rgba(72, 219, 251, 0.11), transparent 55%),
+                radial-gradient(circle at 0% 100%, rgba(254, 202, 87, 0.11), transparent 55%),
+                radial-gradient(circle at 100% 100%, rgba(84, 160, 255, 0.11), transparent 55%);
+            opacity: 0.9;
+            z-index: -1;
+            animation: bgFloat 30s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgFloat {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(-20px, 20px, 0);
+            }
+        }
+
+        /* Rainbow strip navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+            z-index: 1000;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 45vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 70px 20px 20px;
+        }
+
+        .hero-title-container {
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .hero-hi {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .hero-welcome {
+            font-family: 'Pacifico', cursive;
+            font-size: 5rem;
+            font-weight: 400;
+            line-height: 1.2;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+            padding-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #444;
+            max-width: 620px;
+            font-weight: 300;
+        }
+
+        /* Profile avatar */
+        .avatar {
+            margin-bottom: 1.4rem;
+        }
+
+        .avatar img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+            background: linear-gradient(135deg, #ff6b6b, #54a0ff);
+            padding: 3px;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        .scroll-indicator i {
+            font-size: 1.2rem;
+            animation: bounce 1.6s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(6px);
+            }
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 24px 20px 80px;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(6px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .section-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+            border-radius: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            margin-bottom: 2.6rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background-color: #fff;
+            width: 250px;
+            height: 200px;
+            text-align: center;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            transition: color 0.3s ease, transform 0.3s ease, background-position 0.6s ease;
+        }
+
+        /* Spotify base color */
+        .contact-card i.fa-spotify {
+            color: #333;
+        }
+
+        .contact-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            transition: background-position 0.6s ease, color 0.3s ease;
+        }
+
+        /* Hover rainbow for icons + labels */
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-color: transparent;
+        }
+
+        .contact-card:hover i,
+        .contact-card:hover .contact-label {
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shine 5s linear infinite;
+        }
+
+        .contact-card:hover i {
+            transform: translateY(-2px);
+        }
+
+        .contact-detail {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #f5f5f5;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Scroll animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-up.delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .fade-up.delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .fade-up.delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .fade-up.delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .fade-up.delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        .fade-up.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* WhatsApp floating button */
+        .whatsapp-button {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+        }
+
+        .whatsapp-button i {
+            font-size: 1.7rem;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero {
+                padding: 72px 16px 18px;
+                min-height: 40vh;
+            }
+
+            .hero-title-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.3rem;
+            }
+
+            .hero-hi,
+            .hero-welcome {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.03rem;
+                padding: 0 0.5rem;
+            }
+
+            .avatar img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .section-title {
+                font-size: 2.1rem;
+                margin-bottom: 2.2rem;
+            }
+
+            .contact-card {
+                width: 100%;
+                max-width: 320px;
+                height: auto;
+                padding: 1.6rem 1.4rem;
+            }
+
+            .whatsapp-button {
+                right: 16px;
+                bottom: 16px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Rainbow strip -->
+    <nav></nav>
+
+    <!-- Hero / About Section -->
+    <section id="hero">
+        <!-- Avatar -->
+        <div class="avatar fade-up">
+            <img src="pelen-profile.jpg" alt="Pelen Montes Chávez">
+        </div>
+
+        <div class="hero-title-container fade-up delay-1">
+            <span class="hero-hi">Hi.</span>
+            <span class="hero-welcome">Welcome</span>
+        </div>
+
+        <p class="hero-subtitle fade-up delay-2">
+            I’m Pelen Montes Chávez, a high school teacher and creative tech enthusiast.
+        </p>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator fade-up delay-3"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-up delay-1">
+        <div class="section-divider"></div>
+        <h2 class="section-title">Let’s Connect</h2>
+
+        <div class="contact-grid">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/pelen.mch/" target="_blank" class="contact-card fade-up delay-1">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span class="contact-label">Facebook</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/pelen13/" target="_blank" class="contact-card fade-up delay-2">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="contact-label">Instagram</span>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@pelenmch" target="_blank" class="contact-card fade-up delay-3">
+                <i class="fa-brands fa-tiktok"></i>
+                <span class="contact-label">TikTok</span>
+            </a>
+
+            <!-- Spotify -->
+            <a href="https://open.spotify.com/user/1277188057?si=89f9db22bf1148ee" target="_blank"
+                class="contact-card fade-up delay-4">
+                <i class="fa-brands fa-spotify"></i>
+                <span class="contact-label">Spotify</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hi@pelen13.com" class="contact-card fade-up delay-5">
+                <i class="fa-regular fa-envelope"></i>
+                <span class="contact-label">Email</span>
+                <span class="contact-detail">hi@pelen13.com</span>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+528332189030" class="contact-card fade-up delay-5">
+                <i class="fa-solid fa-phone"></i>
+                <span class="contact-label">Phone</span>
+                <span class="contact-detail">+52 833 218 9030</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="fade-up delay-2">
+        © 2025 Pelen13. All rights reserved.
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a class="whatsapp-button"
+        href="https://wa.me/528332189030?text=Hola%20Pelen!%20Te%20escribo%20desde%20tu%20p%C3%A1gina%20pelen13.com%20🙂"
+        target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll animation script -->
+    <script>
+        const animatedElements = document.querySelectorAll('.fade-up');
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+        animatedElements.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>
