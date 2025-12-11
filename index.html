@@ -190,6 +190,27 @@
                 transform: translateY(6px);
             }
         }
+        @keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.08);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.08);
+    }
+    80% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 @keyframes avatarFloat {
     0% {
         transform: translateY(0);
@@ -359,6 +380,7 @@
             z-index: 1100;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            animation: heartbeat 2.2s ease-in-out infinite;
         }
 
         .whatsapp-button:hover {
