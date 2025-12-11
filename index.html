@@ -149,19 +149,20 @@
             margin-bottom: 1.4rem;
         }
 
-     .avatar img {
+.avatar img {
     width: 140px;
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    border: 3px solid rgba(255, 255, 255, 0.95);
     background: linear-gradient(135deg, #ff6b6b, #54a0ff);
     padding: 3px;
-
-  animation: avatarFloat 7s ease-in-out infinite,
+    box-shadow: 0 0 14px rgba(255, 107, 107, 0.45);
+    /* 👇 flotando + glow arcoíris */
+    animation: avatarFloat 7s ease-in-out infinite,
                avatarGlow 6s linear infinite;
 }
+
         /* Scroll indicator */
         .scroll-indicator {
             margin-top: 30px;
