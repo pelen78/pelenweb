@@ -210,6 +210,28 @@
         transform: scale(1);
     }
 }
+@keyframes heartbeatGlow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
+    }
+    25% {
+        transform: scale(1.15);
+        box-shadow: 0 0 18px rgba(37, 211, 102, 0.6);
+    }
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 6px rgba(37, 211, 102, 0.4);
+    }
+    75% {
+        transform: scale(1.15);
+        box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
+    }
+}
 
 @keyframes avatarFloat {
     0% {
@@ -380,7 +402,8 @@
             z-index: 1100;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            animation: heartbeat 2.2s ease-in-out infinite;
+           animation: heartbeatGlow 1.8s ease-in-out infinite;
+
         }
 
         .whatsapp-button:hover {
