@@ -149,19 +149,16 @@
             margin-bottom: 1.4rem;
         }
 
-.avatar img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.95);
-    background: linear-gradient(135deg, #ff6b6b, #54a0ff);
-    padding: 3px;
-    box-shadow: 0 0 14px rgba(255, 107, 107, 0.45);
-    /* 👇 flotando + glow arcoíris */
-    animation: avatarFloat 7s ease-in-out infinite,
-               avatarGlow 6s linear infinite;
-}
+        .avatar img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+            background: linear-gradient(135deg, #ff6b6b, #54a0ff);
+            padding: 3px;
+        }
 
         /* Scroll indicator */
         .scroll-indicator {
@@ -191,66 +188,6 @@
                 transform: translateY(6px);
             }
         }
-        @keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-    20% {
-        transform: scale(1.08);
-    }
-    40% {
-        transform: scale(1);
-    }
-    60% {
-        transform: scale(1.08);
-    }
-    80% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-@keyframes heartbeatGlow {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
-    }
-    25% {
-        transform: scale(1.15);
-        box-shadow: 0 0 18px rgba(37, 211, 102, 0.6);
-    }
-    50% {
-        transform: scale(1);
-        box-shadow: 0 0 6px rgba(37, 211, 102, 0.4);
-    }
-    75% {
-        transform: scale(1.15);
-        box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0px rgba(37, 211, 102, 0.4);
-    }
-}
-
-@keyframes avatarGlow {
-    0% {
-        box-shadow: 0 0 14px rgba(255, 107, 107, 0.55);
-    }
-    25% {
-        box-shadow: 0 0 18px rgba(254, 202, 87, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(72, 219, 251, 0.65);
-    }
-    75% {
-        box-shadow: 0 0 18px rgba(255, 159, 243, 0.6);
-    }
-    100% {
-        box-shadow: 0 0 14px rgba(84, 160, 255, 0.55);
-    }
-}
 
         /* Contact Section */
         #contact {
@@ -409,8 +346,6 @@
             z-index: 1100;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-           animation: heartbeatGlow 1.8s ease-in-out infinite;
-
         }
 
         .whatsapp-button:hover {
