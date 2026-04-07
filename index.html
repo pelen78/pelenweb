@@ -70,10 +70,25 @@
       z-index: 9999;
     }
 
+    /* ── Rainbow bar ── */
+    .rainbow-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #c084fc, #f472b6, #818cf8, #60a5fa, #f87171, #fb923c, #fbbf24);
+      background-size: 200% auto;
+      animation: rainbowSlide 5s linear infinite;
+      z-index: 200;
+    }
+    @keyframes rainbowSlide {
+      from { background-position: 0% center; }
+      to   { background-position: 200% center; }
+    }
+
     /* ── Nav ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 5px; left: 0; right: 0;
       z-index: 100;
       display: flex;
       justify-content: space-between;
@@ -132,16 +147,32 @@
       animation: fadeUp 0.8s 0.2s ease forwards;
     }
 
+    .avatar-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, #c084fc, #f472b6, #818cf8, #60a5fa, #fb923c, #fbbf24);
+      background-size: 300% 300%;
+      animation: fadeUp 0.8s 0.1s ease forwards, ringRotate 4s linear infinite;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+    }
+    @keyframes ringRotate {
+      from { background-position: 0% 50%; }
+      to   { background-position: 100% 50%; }
+    }
     .avatar {
-      width: 110px;
-      height: 110px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--cream);
-      outline: 1px solid var(--ink-faint);
-      margin-bottom: 2.2rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.1s ease forwards;
+      display: block;
+      opacity: 1;
+      animation: none;
+      margin-bottom: 0;
     }
 
     .hero-name {
@@ -523,6 +554,9 @@
 </head>
 <body>
 
+  <!-- Rainbow bar -->
+  <div class="rainbow-bar"></div>
+
   <!-- Nav -->
   <nav>
     <span class="nav-logo">Pelen <em>Montes</em></span>
@@ -535,7 +569,7 @@
 
   <!-- Hero -->
   <section id="hero">
-    <img src="pelen-profile.jpg" alt="Pelen Montes Chávez" class="avatar">
+    <div class="avatar-wrap"><img src="pelen-profile.jpg" alt="Pelen Montes Chávez" class="avatar"></div>
     <p class="hero-eyebrow">Teacher · Builder · Creative</p>
     <h1 class="hero-name">
       <span class="hero-hi">Hi.</span>
@@ -569,7 +603,7 @@
           <i class="fa-solid fa-film card-icon"></i>
           <div class="tiktok-badge">
             <i class="fa-brands fa-tiktok"></i>
-            @pelenmch
+            @culturaencortoo
           </div>
         </div>
       </a>
