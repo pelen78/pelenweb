@@ -844,10 +844,18 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('visible');
-          o
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
