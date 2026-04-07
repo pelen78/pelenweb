@@ -19,11 +19,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:wght@400;500&family=Pacifico&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=Instrument+Sans:wght@400;500&family=Pacifico&display=swap&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
     *,
     *::before,
     *::after {
@@ -188,6 +193,7 @@
       animation: fadeUp 0.8s 0.1s ease forwards, ringRotate 4s linear infinite;
       margin-bottom: 2.2rem;
       opacity: 0;
+      animation-fill-mode: forwards;
     }
 
     @keyframes ringRotate {
@@ -636,18 +642,6 @@
     }
 
     /* ── Animations ── */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -734,7 +728,7 @@
 
   <!-- Hero -->
   <section id="hero">
-    <div class="avatar-wrap"><img src="pelen-profile.jpg" alt="Pelen Montes Chávez" class="avatar"></div>
+    <div class="avatar-wrap"><img src="pelen-profile.jpg" alt="Pelen Montes Chávez" class="avatar" onerror="this.style.display='none'"></div>
     <p class="hero-eyebrow">Teacher · Builder · Creative</p>
     <h1 class="hero-name">
       <span class="hero-hi">Hi.</span>
@@ -811,8 +805,7 @@
         <span class="card-tag"><i class="fa-solid fa-dumbbell"></i> App</span>
         <i class="fa-solid fa-fire card-icon"></i>
         <h2 class="card-title">Fit<br>Diario</h2>
-        <p class="card-desc">Personal fitness tracker with AI analysis, intermittent fasting, calorie balance & cloud
-          sync. Built as a PWA.</p>
+        <p class="card-desc">Personal fitness tracker with AI analysis, intermittent fasting, calorie balance & cloud sync. Built as a PWA.</p>
         <span class="card-arrow">Open app <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
@@ -851,8 +844,7 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const revealEls = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
