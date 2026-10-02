@@ -7,13 +7,13 @@
   <title>Pelen Montes Chávez | pelen13.com</title>
 
   <meta property="og:title" content="Pelen Montes Chávez | pelen13.com">
-  <meta property="og:description" content="Teacher, builder & creative. Cultura en Corto · Nimbus · Spotify.">
+  <meta property="og:description" content="Teacher, builder & creative. Marginalia · Mini Gamers Club · Nimbus · Cultura en Corto.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pelen13.com">
   <meta property="og:image" content="https://pelen13.com/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pelen Montes Chávez | pelen13.com">
-  <meta name="twitter:description" content="Teacher, builder & creative. Cultura en Corto · Nimbus · Spotify.">
+  <meta name="twitter:description" content="Teacher, builder & creative. Marginalia · Mini Gamers Club · Nimbus · Cultura en Corto.">
   <meta name="twitter:image" content="https://pelen13.com/og-image.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,9 +59,13 @@
       --spotify-accent: #16a34a;
       --spotify-text: #14532d;
 
-      --fit-bg: #fff7f3;
-      --fit-accent: #e8500a;
-      --fit-text: #5c1e00;
+      --marg-bg: #f6f1fb;
+      --marg-accent: #7c3aed;
+      --marg-text: #3b1673;
+
+      --mini-bg: #fefbea;
+      --mini-accent: #ca8a04;
+      --mini-text: #57400a;
     }
 
     html {
@@ -521,22 +525,57 @@
       color: var(--spotify-accent);
     }
 
-    /* FitDiario */
-    .card-fit {
-      background: var(--fit-bg);
-      border: 1px solid rgba(232,80,10,0.15);
+    /* Marginalia */
+    .card-marg {
+      background: var(--marg-bg);
+      border: 1px solid rgba(124,58,237,0.15);
     }
-    .card-fit::before {
-      background: radial-gradient(circle at 80% 20%, rgba(232,80,10,0.08), transparent 60%);
+    .card-marg::before {
+      background: radial-gradient(circle at 80% 20%, rgba(124,58,237,0.08), transparent 60%);
     }
-    .card-fit .card-tag { background: rgba(232,80,10,0.12); color: var(--fit-text); }
-    .card-fit .card-icon { color: var(--fit-accent); }
-    .card-fit .card-title { color: var(--fit-text); }
-    .card-fit .card-desc { color: var(--fit-text); }
-    .card-fit .card-arrow { color: var(--fit-accent); }
+    .card-marg .card-tag { background: rgba(124,58,237,0.12); color: var(--marg-text); }
+    .card-marg .card-icon { color: var(--marg-accent); }
+    .card-marg .card-title { color: var(--marg-text); }
+    .card-marg .card-desc { color: var(--marg-text); }
+    .card-marg .card-arrow { color: var(--marg-accent); }
+
+    /* Mini Gamers Club (under construction) */
+    .card-mini {
+      background: var(--mini-bg);
+      border: 1px dashed rgba(202,138,4,0.45);
+    }
+    .card-mini::before {
+      background: repeating-linear-gradient(-45deg, rgba(202,138,4,0.06) 0 14px, transparent 14px 28px);
+    }
+    .card-mini .card-tag { background: rgba(202,138,4,0.14); color: var(--mini-text); }
+    .card-mini .card-icon { color: var(--mini-accent); }
+    .card-mini .card-title { color: var(--mini-text); }
+    .card-mini .card-desc { color: var(--mini-text); }
+    .card-mini .card-arrow { color: var(--mini-accent); }
+
+    .wip-badge {
+      position: absolute;
+      top: 1.6rem;
+      right: 1.6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 100px;
+      background: var(--mini-accent);
+      color: #fff;
+    }
 
     .project-card:hover .card-arrow {
       gap: 10px;
+    }
+
+    .card-span {
+      grid-column: 1 / -1;
     }
 
     /* CenC card is full-width */
@@ -764,23 +803,23 @@
 
     <div class="projects-grid">
 
-      <!-- Cultura en Corto – wide -->
-      <a href="https://www.tiktok.com/@culturaencortoo" target="_blank"
-        class="project-card card-cenc card-wide reveal d1">
-        <div class="card-left">
-          <span class="card-tag"><i class="fa-brands fa-tiktok"></i> TikTok</span>
-          <h2 class="card-title">Cultura<br>en Corto</h2>
-          <p class="card-desc">Mystery, history & untold stories — one short video at a time. Fully AI-powered
-            production pipeline: images, voice, music, edit. All me.</p>
-          <span class="card-arrow">Watch on TikTok <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-        <div class="card-right">
-          <i class="fa-solid fa-film card-icon"></i>
-          <div class="tiktok-badge">
-            <i class="fa-brands fa-tiktok"></i>
-            @culturaencortoo
-          </div>
-        </div>
+      <!-- Marginalia -->
+      <a href="https://mymarginalia.net/" target="_blank" class="project-card card-marg reveal d1">
+        <span class="card-tag"><i class="fa-solid fa-book-open"></i> Web</span>
+        <i class="fa-solid fa-feather-pointed card-icon"></i>
+        <h2 class="card-title">Marginalia</h2>
+        <p class="card-desc">Visual reading guides: books, ideas and notes worth keeping. A personal library, one page at a time.</p>
+        <span class="card-arrow">Start reading <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Mini Gamers Club – under construction -->
+      <a href="https://minigamers.club/" target="_blank" class="project-card card-mini reveal d2">
+        <span class="wip-badge"><i class="fa-solid fa-person-digging"></i> Under construction</span>
+        <span class="card-tag"><i class="fa-solid fa-gamepad"></i> Games</span>
+        <i class="fa-solid fa-gamepad card-icon"></i>
+        <h2 class="card-title">Mini Gamers<br>Club</h2>
+        <p class="card-desc">Tiny browser games to play with Glup. Still being built, come peek at what's coming.</p>
+        <span class="card-arrow">Take a peek <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
       <!-- Nimbus Radio -->
@@ -788,7 +827,7 @@
         <span class="card-tag"><i class="fa-solid fa-radio"></i> App</span>
         <i class="fa-solid fa-radio card-icon"></i>
         <h2 class="card-title">Nimbus<br>Radio</h2>
-        <p class="card-desc">Atmospheric lo-fi & ambient streams. A PWA built from scratch — install it like a native
+        <p class="card-desc">Atmospheric lo-fi & ambient streams. A PWA built from scratch: install it like a native
           app.</p>
         <span class="card-arrow">Open app <i class="fa-solid fa-arrow-right"></i></span>
       </a>
@@ -805,7 +844,7 @@
 
       <!-- Spotify -->
       <a href="https://open.spotify.com/user/1277188057?si=89f9db22bf1148ee" target="_blank"
-        class="project-card card-spotify reveal d4">
+        class="project-card card-spotify card-span reveal d4">
         <span class="card-tag"><i class="fa-brands fa-spotify"></i> Music</span>
         <i class="fa-brands fa-spotify card-icon"></i>
         <h2 class="card-title">Nimbus<br>Sound</h2>
@@ -814,13 +853,23 @@
         <span class="card-arrow">Listen on Spotify <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
-      <!-- FitDiario -->
-      <a href="https://fitdiario.pages.dev" target="_blank" class="project-card card-fit reveal d4">
-        <span class="card-tag"><i class="fa-solid fa-dumbbell"></i> App</span>
-        <i class="fa-solid fa-fire card-icon"></i>
-        <h2 class="card-title">Fit<br>Diario</h2>
-        <p class="card-desc">Personal fitness tracker with AI analysis, intermittent fasting, calorie balance & cloud sync. Built as a PWA.</p>
-        <span class="card-arrow">Open app <i class="fa-solid fa-arrow-right"></i></span>
+      <!-- Cultura en Corto – wide -->
+      <a href="https://www.tiktok.com/@culturaencortoo" target="_blank"
+        class="project-card card-cenc card-wide reveal d1">
+        <div class="card-left">
+          <span class="card-tag"><i class="fa-brands fa-tiktok"></i> TikTok</span>
+          <h2 class="card-title">Cultura<br>en Corto</h2>
+          <p class="card-desc">Mystery, history & untold stories, one short video at a time. Fully AI-powered
+            production pipeline: images, voice, music, edit. All me.</p>
+          <span class="card-arrow">Watch on TikTok <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+        <div class="card-right">
+          <i class="fa-solid fa-film card-icon"></i>
+          <div class="tiktok-badge">
+            <i class="fa-brands fa-tiktok"></i>
+            @culturaencortoo
+          </div>
+        </div>
       </a>
 
     </div>
