@@ -66,6 +66,10 @@
       --mini-bg: #fefbea;
       --mini-accent: #ca8a04;
       --mini-text: #57400a;
+
+      --lumi-bg: #fff1f5;
+      --lumi-accent: #be3567;
+      --lumi-text: #70213f;
     }
 
     html {
@@ -539,6 +543,20 @@
     .card-marg .card-desc { color: var(--marg-text); }
     .card-marg .card-arrow { color: var(--marg-accent); }
 
+    /* Lumimila */
+    .card-lumi {
+      background: var(--lumi-bg);
+      border: 1px solid rgba(190,53,103,0.15);
+    }
+    .card-lumi::before {
+      background: radial-gradient(circle at 80% 20%, rgba(190,53,103,0.08), transparent 60%);
+    }
+    .card-lumi .card-tag { background: rgba(190,53,103,0.12); color: var(--lumi-text); }
+    .card-lumi .card-icon { color: var(--lumi-accent); }
+    .card-lumi .card-title { color: var(--lumi-text); }
+    .card-lumi .card-desc { color: var(--lumi-text); }
+    .card-lumi .card-arrow { color: var(--lumi-accent); }
+
     /* Mini Gamers Club (under construction) */
     .card-mini {
       background: var(--mini-bg);
@@ -842,9 +860,18 @@
         <span class="card-arrow">Check the sky <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
+      <!-- Lumimila -->
+      <a href="https://lumimila.net/" target="_blank" rel="noopener noreferrer" class="project-card card-lumi reveal d3">
+        <span class="card-tag"><i class="fa-solid fa-palette" aria-hidden="true"></i> Shop</span>
+        <i class="fa-solid fa-wand-magic-sparkles card-icon" aria-hidden="true"></i>
+        <h2 class="card-title">Lumimila</h2>
+        <p class="card-desc">Personalized printable cards and cute clipart. A little imagination for your celebrations and creative projects.</p>
+        <span class="card-arrow">Explore Lumimila <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+
       <!-- Spotify -->
       <a href="https://open.spotify.com/user/1277188057?si=89f9db22bf1148ee" target="_blank"
-        class="project-card card-spotify card-span reveal d4">
+        class="project-card card-spotify reveal d4">
         <span class="card-tag"><i class="fa-brands fa-spotify"></i> Music</span>
         <i class="fa-brands fa-spotify card-icon"></i>
         <h2 class="card-title">Nimbus<br>Sound</h2>
